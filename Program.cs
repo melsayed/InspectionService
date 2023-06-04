@@ -6,16 +6,18 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 
+var myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 Console.WriteLine("--- Using InMemory DB");
-builder.Services.AddDbContext<AppDbContext>(opt=>opt.UseInMemoryDatabase("InpectDb"));
+builder.Services.AddDbContext<AppDbContext>(opt => opt.UseInMemoryDatabase("InpectDb"));
 
 
-builder.Services.AddScoped<IInspectionRepo,InspectionRepo>();
-builder.Services.AddScoped<IInspectionTypeRepo,InspectionTypeRepo>();
-builder.Services.AddScoped<IUserRepo,UserRepo>();
+builder.Services.AddScoped<IInspectionRepo, InspectionRepo>();
+builder.Services.AddScoped<IInspectionTypeRepo, InspectionTypeRepo>();
+builder.Services.AddScoped<IUserRepo, UserRepo>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
@@ -47,7 +49,18 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+// Enable CORS to allow requests from this IP
+var inspectionAppURL = builder.Configuration["InspectionAppURL"]?.ToString();
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: myAllowSpecificOrigins,
+        builder =>
+        {
+            builder.WithOrigins(inspectionAppURL)
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+        });
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -58,7 +71,7 @@ if (app.Environment.IsDevelopment())
 }
 
 //app.UseHttpsRedirection();
-
+app.UseCors(myAllowSpecificOrigins);
 //app.UseAuthentication();
 app.UseAuthorization();
 

@@ -79,3 +79,4 @@ C:\Learn\Angular\InspectionService\obj\Debug\net7.0\InspectionService.genruntime
 C:\Learn\Angular\InspectionService\obj\Debug\net7.0\ref\InspectionService.dll
 C:\Learn\Angular\InspectionService\bin\Debug\net7.0\BCrypt.Net-Next.dll
 C:\Learn\Angular\InspectionService\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Learn\Angular\InspectionService\bin\Debug\net7.0\Insomnia_2023-06-03.json

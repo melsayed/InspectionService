@@ -23,20 +23,29 @@ namespace InspectionService.Repositories
 
             _entities.Add(entity);
         }
+        public void Update(T entity)
+        {
+            if (entity == null)
+                throw new ArgumentNullException(nameof(entity));
 
+            //Set the state of the Entity as Modified
+            _context.Entry(entity).State = EntityState.Modified;
+        }
         public void Delete(T entity)
         {
             if (entity == null)
                 throw new ArgumentNullException(nameof(entity));
 
+
             _entities.Remove(entity);
         }
 
         public T FindByCondition(Expression<Func<T, bool>> predicate) => _entities.FirstOrDefault(predicate);
-
+        public bool CheckIfExist(Expression<Func<T, bool>> predicate) => _entities.Any(predicate);
         public IEnumerable<T> GetAll() => _entities.ToList();
-
+        
         public bool SaveChanges() => _context.SaveChanges() > 0;
+
 
     }
 }

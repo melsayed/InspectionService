@@ -26,7 +26,7 @@ namespace InspectionService.Controllers
         {
             // var user = GetCurrentUser();
             // Console.WriteLine(user.DisplayName);
-            
+
             Console.WriteLine("----- Get All Inspections -----");
             var inspectionsItems = _repository.GetAll();
             return Ok(_mapper.Map<IEnumerable<InspectionReadDto>>(inspectionsItems));
@@ -55,6 +55,35 @@ namespace InspectionService.Controllers
             return CreatedAtRoute(nameof(GetInspectionById), new { id = inspectionRead.Id }, inspectionRead);
         }
 
+        [Route("{id}")]
+        [HttpPut]
+        public ActionResult<InspectionReadDto> UpdateInspection(int id, InspectionUpdateDto inspectionUpdated)
+        {
+            if (id == null || inspectionUpdated == null)
+                return BadRequest();
+            if (!_repository.CheckIfExist(id))
+                return BadRequest();
+            if (id != inspectionUpdated.Id)
+                return BadRequest();
 
+            var inspection = _mapper.Map<Inspection>(inspectionUpdated);
+
+            _repository.Update(inspection);
+            _repository.SaveChanges();
+
+            var inspectionRead = _mapper.Map<InspectionReadDto>(inspection);
+
+            return CreatedAtRoute(nameof(GetInspectionById), new { id = inspectionRead.Id }, inspectionRead);
+        }
+
+        public ActionResult DeleteInspection(int id)
+        {
+            var inspection = _repository.GetById(id);
+            if (inspection == null)
+                return BadRequest();
+
+            _repository.Delete(inspection);
+            return Ok();
+        }
     }
 }

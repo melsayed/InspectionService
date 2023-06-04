@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Learn\\Angular\\InspectionService\\InspectionService.csproj": {}
+    "C:\\Learn\\Angular\\inspectionservice\\InspectionService.csproj": {}
   },
   "projects": {
-    "C:\\Learn\\Angular\\InspectionService\\InspectionService.csproj": {
+    "C:\\Learn\\Angular\\inspectionservice\\InspectionService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Learn\\Angular\\InspectionService\\InspectionService.csproj",
+        "projectUniqueName": "C:\\Learn\\Angular\\inspectionservice\\InspectionService.csproj",
         "projectName": "InspectionService",
-        "projectPath": "C:\\Learn\\Angular\\InspectionService\\InspectionService.csproj",
+        "projectPath": "C:\\Learn\\Angular\\inspectionservice\\InspectionService.csproj",
         "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-        "outputPath": "C:\\Learn\\Angular\\InspectionService\\obj\\",
+        "outputPath": "C:\\Learn\\Angular\\inspectionservice\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -13,6 +13,8 @@ namespace InspectionService.Repositories
             _context = context;
         }
 
+        public bool CheckIfExist(int id) => CheckIfExist(p => p.Id == id);
+
         public Inspection GetById(int id) => FindByCondition(p => p.Id == id);
     }
 }

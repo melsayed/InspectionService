@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lMMRw6+TAkFkyCWLRG6m2o+6zkpHp2esvdaoiLqmqaryk7yJ7pflmEFLI9UFtgJJK0e4EJ1xdO4dXJ1BgFWstQ==",
+  "dgSpecHash": "hDxDe+NUIUiRhAMRUQEovCdZVrd7xF32NpDoBKPi62WbCZ9JL/ri9EbhQEEIP1Cs40AJubgeWCgQd1gQ8B8y4Q==",
   "success": true,
-  "projectFilePath": "C:\\Learn\\Angular\\InspectionService\\InspectionService.csproj",
+  "projectFilePath": "C:\\Learn\\Angular\\inspectionservice\\InspectionService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
