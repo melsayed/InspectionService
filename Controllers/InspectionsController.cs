@@ -76,6 +76,8 @@ namespace InspectionService.Controllers
             return CreatedAtRoute(nameof(GetInspectionById), new { id = inspectionRead.Id }, inspectionRead);
         }
 
+        [Route("{id}")]
+        [HttpDelete]
         public ActionResult DeleteInspection(int id)
         {
             var inspection = _repository.GetById(id);
