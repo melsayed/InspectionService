@@ -50,17 +50,20 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 // Enable CORS to allow requests from this IP
-var inspectionAppURL = builder.Configuration["InspectionAppURL"]?.ToString();
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy(name: myAllowSpecificOrigins,
-        builder =>
-        {
-            builder.WithOrigins(inspectionAppURL)
-            .AllowAnyMethod()
-            .AllowAnyHeader();
-        });
-});
+// var inspectionAppURL = builder.Configuration["InspectionAppURL"]?.ToString();
+builder.Services.AddCors();
+// builder.Services.AddCors(options =>
+// {
+//     options.AddPolicy(name: myAllowSpecificOrigins,
+//         builder =>
+//         {
+//             builder.WithOrigins(inspectionAppURL)
+//             .AllowAnyMethod()
+//             .AllowAnyHeader();
+//         });
+// });
+
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -70,8 +73,15 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+
 //app.UseHttpsRedirection();
-app.UseCors(myAllowSpecificOrigins);
+//app.UseCors(myAllowSpecificOrigins);
+app.UseCors(x => x
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .SetIsOriginAllowed(origin => true) // allow any origin
+                .AllowCredentials());
+
 //app.UseAuthentication();
 app.UseAuthorization();
 

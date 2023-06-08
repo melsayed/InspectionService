@@ -4060,24 +4060,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mahmoud Elsayed\\.nuget\\packages\\": {}
+    "C:\\Users\\Administrator\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Learning\\Angular\\InspectionService\\InspectionService.csproj",
+      "projectUniqueName": "C:\\Learn\\Angular\\InspectionService\\InspectionService.csproj",
       "projectName": "InspectionService",
-      "projectPath": "E:\\Learning\\Angular\\InspectionService\\InspectionService.csproj",
-      "packagesPath": "C:\\Users\\Mahmoud Elsayed\\.nuget\\packages\\",
-      "outputPath": "E:\\Learning\\Angular\\InspectionService\\obj\\",
+      "projectPath": "C:\\Learn\\Angular\\InspectionService\\InspectionService.csproj",
+      "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
+      "outputPath": "C:\\Learn\\Angular\\InspectionService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mahmoud Elsayed\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Administrator\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files\\dotnet\\sdk\\7.0.302\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },

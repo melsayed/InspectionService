@@ -162,3 +162,4 @@ E:\Learning\Angular\InspectionService\obj\Debug\net7.0\refint\InspectionService.
 E:\Learning\Angular\InspectionService\obj\Debug\net7.0\InspectionService.pdb
 E:\Learning\Angular\InspectionService\obj\Debug\net7.0\InspectionService.genruntimeconfig.cache
 E:\Learning\Angular\InspectionService\obj\Debug\net7.0\ref\InspectionService.dll
+C:\Learn\Angular\InspectionService\bin\Debug\net7.0\appsettings.Production.json
